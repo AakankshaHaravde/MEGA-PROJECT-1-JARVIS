@@ -31,9 +31,7 @@ if __name__ == "__main__":
             command = r.recognize_google(audio)    
             print(command)
             print("Jarvis thinks you said " + r.recognize_sphinx(audio))
-        except sr.UnknownValueError:
-            print("Jarvis could not understand audio")
-        except sr.RequestError as e:
-            print("Sphinx error; {0}".format(e))
- 
+        except Exception as e:
+            print("Error; {0}".format(e))
+
 
