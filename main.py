@@ -13,8 +13,22 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 def processCommand(c):
-    print(c)
-    pass
+    if "open google" in c.lower(): 
+        webbrowser.open("https://google.com")
+    elif "open youtube" in c.lower():
+        webbrowser.open("https://youtube.com")
+    elif "open stack overflow" in c.lower():
+        webbrowser.open("https://stackoverflow.com")
+    elif "open github" in c.lower():
+        webbrowser.open("https://github.com")
+    elif "open facebook" in c.lower():
+        webbrowser.open("https://facebook.com")
+    elif "open twitter" in c.lower():
+        webbrowser.open("https://twitter.com")
+    elif "open instagram" in c.lower():
+        webbrowser.open("https://instagram.com")
+    elif "open linkedin" in c.lower():
+        webbrowser.open("https://linkedin.com")
     
 if __name__ == "__main__":
     speak("Initializing Jarivis....")
@@ -42,7 +56,7 @@ if __name__ == "__main__":
                     audio = r.listen(source)
                     command = r.recognize_google(audio)
 
-                    processCommand()
+                    processCommand(command)
 
         except Exception as e:
             print("Error; {0}".format(e))
